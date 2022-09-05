@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace WolterKluwerTest.RequestModels
 {
-    public class RequestLicense : RequestToken
+    public class RequestLicense
     {
         [JsonProperty("applicationId")]
         public string ApplicationId { get; set; } = string.Empty;

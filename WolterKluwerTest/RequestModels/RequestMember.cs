@@ -1,6 +1,6 @@
 ﻿namespace WolterKluwerTest.RequestModels
 {
-    public class RequestMember : RequestToken
+    public class RequestMember
     {
         public string IdentityId { get; set; } = string.Empty;
         public string OrganizationalUnitId { get; set; } = string.Empty;

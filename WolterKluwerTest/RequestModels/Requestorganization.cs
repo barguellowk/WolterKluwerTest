@@ -1,6 +1,6 @@
 ﻿namespace WolterKluwerTest.RequestModels
 {
-    public class Requestorganization : RequestToken
+    public class Requestorganization
     {
         public bool AllowTwitter { get; set; }
         public bool AllowWindows { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace WolterKluwerTest.RequestModels
 {
-    public class RequestIdentity : RequestToken
+    public class RequestIdentity
     {
         public string name { get; set; }
         public string surname { get; set; }

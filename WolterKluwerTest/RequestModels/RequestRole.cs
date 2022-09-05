@@ -1,6 +1,6 @@
 ﻿namespace WolterKluwerTest.RequestModels
 {
-    public class RequestRole: RequestToken
+    public class RequestRole
     {
         public string LicensedApplicationId { get; set; } = string.Empty;
     }
