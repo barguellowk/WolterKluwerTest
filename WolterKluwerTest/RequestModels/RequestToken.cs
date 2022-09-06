@@ -6,18 +6,15 @@ namespace WolterKluwerTest.RequestModels
     public class RequestToken
     {
         [JsonProperty("grant_type")]
-        [DefaultValue("client_credentials")]
-        public string GrantType { get; set; } = string.Empty;
+        public string GrantType { get; } = "client_credentials";
 
         [JsonProperty("client_id")]
-        [DefaultValue("becquer.arguello")]
-        public string ClientId { get; set; } = string.Empty;
+        public string ClientId { get; } = "becquer.arguello";
 
         [JsonProperty("client_secret")]
-        public string ClientSecret { get; set; } = string.Empty;
+        public string ClientSecret { get; } = "123456";
 
         [JsonProperty("scope")]
-        [DefaultValue("WK.GraphAPI.Private")]
-        public string Scope { get; set; } = string.Empty;
+        public string Scope { get; } = "WK.GraphAPI.Private";
     }
 }

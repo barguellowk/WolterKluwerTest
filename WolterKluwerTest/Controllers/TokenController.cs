@@ -11,9 +11,10 @@ namespace WolterKluwerTest.Controllers
     [ApiController]
     public class TokenController : ControllerBase
     {
-        [HttpPost("GenerateToken")]
-        public ActionResult GenerateToken(RequestToken requestToken)
+        [HttpGet("GenerateToken")]
+        public ActionResult GenerateToken()
         {
+            RequestToken requestToken = new();
             TokenService.GetToken(requestToken);
             var token = TokenService.Token;
             if (token != null && token.HasError)

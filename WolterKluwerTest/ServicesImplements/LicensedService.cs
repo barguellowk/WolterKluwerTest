@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using WolterKluwerTest.ModelsHelpers;
-using WolterKluwerTest.ModelsResponse;
-using WolterKluwerTest.ModelsResponse.License;
+﻿using Newtonsoft.Json;
 using WolterKluwerTest.Request;
 using WolterKluwerTest.RequestModels;
+using WolterKluwerTest.ModelsHelpers;
 using WolterKluwerTest.ServiceContract;
+using WolterKluwerTest.ModelsResponse.License;
 
 namespace WolterKluwerTest.ServicesImplements
 {
