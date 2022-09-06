@@ -17,7 +17,7 @@ namespace WolterKluwerTest.ServicesImplements
             var licenseResponse = new ResponseLicense();
             if(token != null) 
             {
-                var uri = $"{UriConts.uriBaseApiDev}, organizationalunits/, {organizationId}, /licensedapplications";
+                var uri = $"{UriConts.uriBaseApiDev}organizationalunits/{organizationId}/licensedapplications";
                 var response = RequestService.DoPostRequest(uri, token, requestLicense);
                 var value = response.Content.ReadAsStringAsync().Result;
 
