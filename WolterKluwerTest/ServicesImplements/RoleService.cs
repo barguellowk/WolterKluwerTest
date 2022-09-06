@@ -36,5 +36,17 @@ namespace WolterKluwerTest.ServicesImplements
             }
             return responseRole;
         }
+
+        public string DeleteRole(string idMember, string idRole, string? token)
+        {
+            if (token != null)
+            {
+                var uri = $"{UriConts.uriBaseApiDevRole}members/{idMember}/roles/{idRole}";
+                var response = RequestService.DoDeleteRequest(uri, token);
+                return response.Content.ReadAsStringAsync().Result;
+            }
+            return "Token is null";
+        }
+
     }
 }

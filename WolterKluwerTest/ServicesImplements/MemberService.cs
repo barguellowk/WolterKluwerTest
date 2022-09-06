@@ -36,5 +36,16 @@ namespace WolterKluwerTest.ServicesImplements
 
             return memberResponse;
         }
+
+        public string DeleteMember(string idMember, string? token)
+        {
+            if (token != null)
+            {
+                var uri = $"{UriConts.uriBaseApiDev}members/{idMember}";
+                var response = RequestService.DoDeleteRequest(uri, token);
+                return response.Content.ReadAsStringAsync().Result;
+            }
+            return "Token is null";
+        }
     }
 }

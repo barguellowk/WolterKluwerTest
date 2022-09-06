@@ -6,5 +6,6 @@ namespace WolterKluwerTest.ServiceContract
     public interface IMemberService
     {
         ResponseMember? CreateMember(RequestMember requestMember, string? token);
+        string DeleteMember(string idMember, string? token);
     }
 }

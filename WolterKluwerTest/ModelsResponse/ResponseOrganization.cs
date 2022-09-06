@@ -25,7 +25,7 @@ namespace WolterKluwerTest.ModelsResponse
         [JsonProperty("complexPassword")]
         public bool ComplexPassword { get; set; }
 
-        [JsonProperty("members")]
+        [JsonProperty("passwordCaducity")]
         public bool passwordCaducity { get; set; }
 
         [JsonProperty("passwordCaducityCounter")]

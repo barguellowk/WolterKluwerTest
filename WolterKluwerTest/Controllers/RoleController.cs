@@ -23,5 +23,11 @@ namespace WolterKluwerTest.Controllers
         {
             return Ok(_iRoleService.CreateRole(requestRole, memberId, Token?.AccessToken));
         }
+
+        [HttpDelete("DeleteRole")]
+        public ActionResult DeleteRole(string memberId, string idRole)
+        {
+            return Ok(_iRoleService.DeleteRole(memberId, idRole, Token?.AccessToken));
+        }
     }
 }

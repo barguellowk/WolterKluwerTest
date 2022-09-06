@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using WolterKluwerTest.Request;
 using WolterKluwerTest.RequestModels;
 
@@ -16,11 +18,12 @@ namespace WolterKluwerTest.Controllers
             var token = TokenService.Token;
             if (token != null && token.HasError)
             {
-                return Ok("Token Error :" + token.Error);
+                return Ok(token.Error);
             }
             else
             {
-                return Ok("Token generate correctly");
+                var response = JsonConvert.SerializeObject("Token generate correctly");
+                return Ok(response);
             }
         }
     }

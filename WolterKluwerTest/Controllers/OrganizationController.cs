@@ -25,7 +25,7 @@ namespace WolterKluwerTest.Controllers
             return Ok(_iOrganizationService.CreateOrganization(requestorganization, Token?.AccessToken));
         }
 
-        [HttpPost("DeleteOrganization")]
+        [HttpDelete("DeleteOrganization")]
         public ActionResult DeleteOrganization(string idOrganization)
         {
             return Ok(_iOrganizationService.DeleteOrganization(idOrganization, Token?.AccessToken));

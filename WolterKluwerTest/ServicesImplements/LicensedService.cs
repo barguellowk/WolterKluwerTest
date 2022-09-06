@@ -37,5 +37,16 @@ namespace WolterKluwerTest.ServicesImplements
 
             return licenseResponse;
         }
+
+        public string DeleteLicense(string idMember,string idLicensed, string? token)
+        {
+            if (token != null)
+            {
+                var uri = $"{UriConts.uriBaseApiDev}organizationalunits/{idMember}/licensedapplications/{idLicensed}";
+                var response = RequestService.DoDeleteRequest(uri, token);
+                return response.Content.ReadAsStringAsync().Result;
+            }
+            return "Token is null";
+        }
     }
 }

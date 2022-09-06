@@ -23,7 +23,7 @@ namespace WolterKluwerTest.Controllers
             return Ok(_iIdentityService.CreateIdentity(requestIdentity, Token?.AccessToken));
         }
 
-        [HttpPost("DeleteIdentity")]
+        [HttpDelete("DeleteIdentity")]
         public ActionResult DeleteIdentity(string email)
         {
             return Ok(_iIdentityService.DeleteIdentity(email, Token?.AccessToken));

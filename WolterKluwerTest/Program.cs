@@ -15,6 +15,16 @@ builder.Services.AddScoped<ILicensedService, LicensedService>();
 builder.Services.AddScoped<IMemberService, MemberService>();
 builder.Services.AddScoped<IOrganizationService, OrganizationService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpeificOrigin",
+    builder =>
+    {
+        builder.WithOrigins("*").WithHeaders("*").WithMethods("*");
+    });
+}
+
+);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,6 +35,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowSpeificOrigin");
 
 app.UseAuthorization();
 

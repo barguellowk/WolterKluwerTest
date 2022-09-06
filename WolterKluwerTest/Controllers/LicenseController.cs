@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WolterKluwerTest.Request;
 using WolterKluwerTest.RequestModels;
 using WolterKluwerTest.ServiceContract;
+using WolterKluwerTest.ServicesImplements;
 
 namespace WolterKluwerTest.Controllers
 {
@@ -23,6 +24,12 @@ namespace WolterKluwerTest.Controllers
         public ActionResult CreateLicense(RequestLicense requestLicense, string organizationId) 
         {
             return Ok(_iLicensedService.CreateLicense(requestLicense, organizationId, Token?.AccessToken));
+        }
+
+        [HttpDelete("DeleteLicense")]
+        public ActionResult DeleteLicense(string idMember, string idLicense)
+        {
+            return Ok(_iLicensedService.DeleteLicense(idMember, idLicense, Token?.AccessToken));
         }
     }
 }

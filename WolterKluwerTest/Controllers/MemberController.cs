@@ -20,9 +20,15 @@ namespace WolterKluwerTest.Controllers
         }
 
         [HttpPost("CreateMember")]
-        public ActionResult CreateMember(RequestMember requestMember) 
+        public ActionResult CreateMember(RequestMember requestMember)
         {
             return Ok(_iMemberservice.CreateMember(requestMember, Token?.AccessToken));
+        }
+
+        [HttpDelete("DeleteMember")]
+        public ActionResult DeleteMember(string idMember)
+        {
+            return Ok(_iMemberservice.DeleteMember(idMember, Token?.AccessToken));
         }
     }
 }
